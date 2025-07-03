@@ -1,10 +1,15 @@
 """module for runninng benchmarks"""
 import os
+import sys
 import json
 from functools import partial
 import multiprocessing
 from collections import defaultdict
-from riix.eval import evaluate
+
+# Add the parent directory to sys.path. This lets me import the Cartesian factorisation functions. 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from riix_module.eval import evaluate
 from esportsbench.arg_parsers import get_games_argparser, comma_separated
 from esportsbench.datasets import load_dataset
 from esportsbench.constants import GAME_NAME_MAP, ALL_RATING_SYSTEM_NAMES, RATING_SYSTEM_NAME_CLASS_MAP

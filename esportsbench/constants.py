@@ -1,22 +1,22 @@
 """constants and configs for use in other scripts"""
 from functools import partial
-from riix.models.elo import Elo
-from riix.models.glicko import Glicko
-from riix.models.glicko2 import Glicko2
-from riix.models.trueskill import TrueSkill
-from riix.models.weng_lin import WengLin
-from riix.models.melo import Melo
-from riix.models.gen_elo import GenElo
-from riix.models.constant_variance_glicko import ConstantVarianceGlicko
-from riix.models.velo import vElo
-from riix.models.online_disc_decomp import OnlineDiscDecomp
-from riix.models.online_rao_kupper import OnlineRaoKupper
-from riix.models.elo_davidson import EloDavidson
-from riix.models.skf import VSKF
-from riix.models.elomentum import EloMentum
-from riix.models.yuksel_2024 import Yuksel2024
-from riix.models.autograd_rating_system import AutogradRatingSystem
-from riix.models.baselines import BaselineRatingSystem
+from riix_module.models.elo import Elo
+from riix_module.models.glicko import Glicko
+from riix_module.models.glicko2 import Glicko2
+from riix_module.models.trueskill import TrueSkill
+from riix_module.models.weng_lin import WengLin
+from riix_module.models.melo import Melo
+from riix_module.models.gen_elo import GenElo
+from riix_module.models.constant_variance_glicko import ConstantVarianceGlicko
+from riix_module.models.velo import vElo
+from riix_module.models.online_disc_decomp import OnlineDiscDecomp
+from riix_module.models.online_rao_kupper import OnlineRaoKupper
+from riix_module.models.elo_davidson import EloDavidson
+from riix_module.models.skf import VSKF
+from riix_module.models.elomentum import EloMentum
+from riix_module.models.yuksel_2024 import Yuksel2024
+from riix_module.models.autograd_rating_system import AutogradRatingSystem
+from riix_module.models.baselines import BaselineRatingSystem
 
 GAME_NAME_MAP = {
     'lol': 'league_of_legends',

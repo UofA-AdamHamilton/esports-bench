@@ -2,10 +2,10 @@
 import json
 from datetime import datetime, timedelta
 import numpy as np
-from riix.models.elo import Elo
-from riix.models.glicko import Glicko
-from riix.models.glicko2 import Glicko2
-from riix.models.trueskill import TrueSkill
+from riix_module.models.elo import Elo
+from riix_module.models.glicko import Glicko
+from riix_module.models.glicko2 import Glicko2
+from riix_module.models.trueskill import TrueSkill
 from esportsbench.datasets import load_dataset
 
 

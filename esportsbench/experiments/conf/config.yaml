@@ -1,15 +1,16 @@
 # default hyperparameters
 
 # data_dir: 'hf_data'
-data_dir: 'final_data_v3_1'
+data_dir: 'hf_data/v1_0' # altered by Adam Hamilton 3/7/2025
 train_end_date: '2023-09-30'
 test_end_date: '2024-09-30'
 rating_period: '7D'
 num_samples: 16
 num_processes: 16
-games: ['tetris', 'halo']
+games: ['tetris']
+rating_systems: ['melo', 'elo']
 
 # this will load the values from the listed file
 defaults:
   - _self_
-  - broad_sweep_config: default
+  - broad_sweep_config: broad_sweep_elo

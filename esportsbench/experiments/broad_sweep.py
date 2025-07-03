@@ -8,15 +8,15 @@ from esportsbench.constants import GAME_SHORT_NAMES
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
+
 def main(config: DictConfig):
     if config.games == 'all':
         games = GAME_SHORT_NAMES
     else:
         games = config.games
-
     sweep(
         games=games,
-        rating_systems=config.rating_systems,
+        #rating_systems=config.rating_systems,
         data_dir=config.data_dir,
         granularity='broad',
         sweep_config=config.broad_sweep_config,

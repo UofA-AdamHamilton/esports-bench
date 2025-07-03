@@ -1,0 +1,7 @@
+# default broad sweep hyperparameter ranges
+elo:
+  model: elo
+  k:
+    min_value: 3.2
+    max_value: 320.0
+

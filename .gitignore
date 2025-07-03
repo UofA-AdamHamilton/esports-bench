@@ -166,3 +166,6 @@ data/
 
 *.pkl
 *.png
+
+# removes the altered riix module 
+riix_module/

@@ -1,12 +1,17 @@
 """module for sweeping hyperparameters"""
 import os
+import sys # Loads the 
 import pathlib
 import json
 import warnings
 from collections import defaultdict
 from typing import Dict
 import numpy as np
-from riix.eval import grid_search
+
+# Add the parent directory to sys.path. This lets me import the Cartesian factorisation functions. 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from riix_module.eval import grid_search 
+
 from esportsbench.datasets import load_dataset
 from esportsbench.constants import RATING_SYSTEM_NAME_CLASS_MAP
 
@@ -118,3 +123,7 @@ def sweep(
     return sweep_results
 
 
+if __name__ == '__main__':
+    # tests the sweep function out on tetris. 
+    games = ['tetris']
+    # gets our inputs from the config.yaml file. 

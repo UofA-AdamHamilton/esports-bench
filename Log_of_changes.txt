@@ -1,0 +1,13 @@
+What have I done to the esports bench
+
+- Created a new branch so that my changes are completely separate from the original
+- moved the module componenet of the riix repository into the repository for the esports bench
+- Altered the import statements in the Python files such that I import from the altered locally stored riix module instead of the pip install version 
+- added the altered riix_module to the .gitignore file
+- noticed that the broad_sweep.py file was using the seep function with input rating_systems. The sweep function does not take that as an input
+- Now I am having trouble loading the tetris parquet file. 
+- The config.yaml file is also pointing to a directory that does not exist. 
+- I am working on changing the config.yaml file and the datasets.py folder so I can load a dataset.   
+- When I use the TimedPairDataset from riix_module.utils.data_utils on the smash_melle dataset One of the competitors is 
+- So far the load_dataset in esportsbench/datasets.py works on the smash_melle datasets
+- 

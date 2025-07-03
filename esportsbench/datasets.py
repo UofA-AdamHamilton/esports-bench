@@ -2,7 +2,7 @@
 import pathlib
 import numpy as np
 import polars as pl
-from riix.utils.data_utils import TimedPairDataset
+from riix_module.utils.data_utils import TimedPairDataset
 from esportsbench.constants import GAME_NAME_MAP
 
 BASE_DATA_DIR = pathlib.Path(__file__).resolve().parents[1] / 'data' 
@@ -15,7 +15,7 @@ def load_dataset(
     max_rows=None,
     train_end_date='2023-03-31',
     test_end_date='2024-03-31',
-    data_dir = 'final_data',
+    data_dir = 'hf_data/v1_0', # changed the data directory based on what I downloaded from HF
 ):
     # map short name to full name if short name is provided
     if game in GAME_NAME_MAP:
@@ -39,5 +39,18 @@ def load_dataset(
     )
     dataset = dataset[:train_rows + test_rows]
     print(f'dataset is split into {train_rows} train rows and {test_rows} test rows')
+    
     final_test_mask = np.arange(train_rows + test_rows) >= train_rows
     return dataset, final_test_mask
+
+
+# adding added script that checks the function load_dataset along with its components are working
+# # added by Adam Hamilton 2/7/2025 while he should have been doing something productive 
+if __name__ == '__main__':
+    game = 'smash_melee'
+    data_dir = 'hf_data/v1_0'
+    df = pl.read_parquet(BASE_DATA_DIR / data_dir / f'parquet/{game}.parquet')
+    print(df.head())
+    print('number of data_points: ', len(df))
+    print(df[-1])
+    load_dataset(game, data_dir = data_dir)
