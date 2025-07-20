@@ -1,0 +1,7 @@
+Notes on Matt Roughan's "Book" 
+On page 18, the sentence "I like figure first because " seems off
+I am not too sure about the diagram on page 20 seems really subjective
+In page 28, the "however, that alos means" seems out of place
+On page 29 fourth bullet point, you say " I won't say debugging easy" I think there should be an "is" in there
+page 34 you say "reasonably statistical properties", should be reasonable statistical properties
+

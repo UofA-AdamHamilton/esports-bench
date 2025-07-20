@@ -10,4 +10,8 @@ What have I done to the esports bench
 - I am working on changing the config.yaml file and the datasets.py folder so I can load a dataset.   
 - When I use the TimedPairDataset from riix_module.utils.data_utils on the smash_melle dataset One of the competitors is 
 - So far the load_dataset in esportsbench/datasets.py works on the smash_melle datasets
+- I have altered the config.yaml file and created a new broad_sweep_elo.yaml config file so I can just run broad_sweep with the ELo rating rating_systems
+- broad_sweep.py is now working.
 - 
+TO DO list 
+- write topological evaluation script for interaction networks

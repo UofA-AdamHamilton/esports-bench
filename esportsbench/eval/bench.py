@@ -6,7 +6,7 @@ from functools import partial
 import multiprocessing
 from collections import defaultdict
 
-# Add the parent directory to sys.path. This lets me import the Cartesian factorisation functions. 
+# Add the parent directory to sys.path. This lets me import the riix_module. 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from riix_module.eval import evaluate

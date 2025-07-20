@@ -54,3 +54,19 @@ if __name__ == '__main__':
     print('number of data_points: ', len(df))
     print(df[-1])
     load_dataset(game, data_dir = data_dir)
+
+    # Step 1: Create new columns with the names sorted alphabetically per row
+    df_sorted = df.with_columns([
+        pl.min_horizontal(['competitor_1', 'competitor_2']).alias('name_a'),
+        pl.max_horizontal(['competitor_1', 'competitor_2']).alias('name_b')
+        ])
+
+    # Step 2: Select only the sorted name columns and drop duplicates
+    unique_pairs_df = df_sorted.select(['name_a', 'name_b']).unique()
+
+    # Step 3: Convert to a list of tuples
+    unique_pairs = list(zip(unique_pairs_df['name_a'], unique_pairs_df['name_b']))
+
+    # Optional: convert to list if you need list format
+    unique_pairs_list = list(unique_pairs)
+    print(unique_pairs_list)

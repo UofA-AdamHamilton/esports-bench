@@ -2,10 +2,16 @@
 import json
 from datetime import datetime, timedelta
 import numpy as np
-from riix_module.models.elo import Elo
-from riix_module.models.glicko import Glicko
-from riix_module.models.glicko2 import Glicko2
-from riix_module.models.trueskill import TrueSkill
+import sys 
+import os 
+
+# Add the parent directory to sys.path. This lets me import the riix_module functions. 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from riix.riix_module.models.elo import Elo
+from riix.riix_module.models.glicko import Glicko
+from riix.riix_module.models.glicko2 import Glicko2
+from riix.riix_module.models.trueskill import TrueSkill
 from esportsbench.datasets import load_dataset
 
 
