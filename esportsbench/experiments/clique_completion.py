@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Add the parent directory to sys.path. This lets me import the riix_module functions. 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from riix.riix_module.utils.data_utils import TimedPairDataset
+from riix.utils.data_utils import TimedPairDataset
 from esportsbench.constants import GAME_NAME_MAP
 from esportsbench.datasets import load_dataset
 

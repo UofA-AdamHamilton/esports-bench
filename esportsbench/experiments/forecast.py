@@ -2,8 +2,8 @@
 from collections import defaultdict
 import json
 import numpy as np
-from riix_module.models.elo import Elo
-from riix_module.models.glicko2 import Glicko2
+from riix.models.elo import Elo
+from riix.models.glicko2 import Glicko2
 from esportsbench.datasets import load_dataset
 from esportsbench.constants import GAME_NAME_MAP
 

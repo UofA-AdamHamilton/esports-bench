@@ -62,7 +62,6 @@ def main(config: DictConfig):
         'num_processes' : config.num_processes,
     }
 
-
     best_params = {}
     for game in games:
         broad_sweep_results = sweep(
@@ -98,7 +97,8 @@ def main(config: DictConfig):
         data_dir=config.data_dir,
         hyperparameter_config=best_params
     )
-    print_results(benchark)        
+
+    print_results(benchark)       
 
 if __name__ == '__main__':
     main()

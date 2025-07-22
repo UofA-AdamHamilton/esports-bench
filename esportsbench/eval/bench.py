@@ -6,10 +6,7 @@ from functools import partial
 import multiprocessing
 from collections import defaultdict
 
-# Add the parent directory to sys.path. This lets me import the riix_module. 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from riix_module.eval import evaluate
+from riix.eval import evaluate
 from esportsbench.arg_parsers import get_games_argparser, comma_separated
 from esportsbench.datasets import load_dataset
 from esportsbench.constants import GAME_NAME_MAP, ALL_RATING_SYSTEM_NAMES, RATING_SYSTEM_NAME_CLASS_MAP
@@ -77,12 +74,12 @@ def run_benchmark(
                 test_end_date=test_end_date,
                 data_dir=data_dir,
             )
-
+            
             if isinstance(hyperparameter_config, dict):
                 rating_system_keys = [key for key in hyperparameter_config[game_short_name].keys()]
             else:
                 rating_system_keys = rating_systems
-
+            print('keys', rating_system_keys)
             for rating_system_key in rating_system_keys:
                 print(f'\nEvaluating {rating_system_key} on {game_short_name}')
                 params = {}
@@ -102,6 +99,7 @@ def run_benchmark(
                     print('Using provided hyperparameters:')
                     params = hyperparameter_config[game_short_name][rating_system_key]
                     print(params)
+                    rating_system_name = rating_system_key
                 else:
                     print(hyperparameter_config)
                     raise ValueError('Expected config to be either a path or a dict')

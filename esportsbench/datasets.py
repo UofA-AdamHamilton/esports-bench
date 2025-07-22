@@ -2,7 +2,7 @@
 import pathlib
 import numpy as np
 import polars as pl
-from riix_module.utils.data_utils import TimedPairDataset
+from riix.utils.data_utils import TimedPairDataset 
 from esportsbench.constants import GAME_NAME_MAP
 
 BASE_DATA_DIR = pathlib.Path(__file__).resolve().parents[1] / 'data' 

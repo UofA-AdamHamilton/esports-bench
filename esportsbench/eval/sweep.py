@@ -10,7 +10,7 @@ import numpy as np
 
 # Add the parent directory to sys.path. This lets me import the Cartesian factorisation functions. 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from riix_module.eval import grid_search 
+from riix.eval import grid_search 
 
 from esportsbench.datasets import load_dataset
 from esportsbench.constants import RATING_SYSTEM_NAME_CLASS_MAP
@@ -120,6 +120,7 @@ def sweep(
             json.dump(out_dict, open(out_file_path, 'w'), indent=2)
             sweep_results[dataset_name][rating_system_key] = best_params
             del best_metrics, best_params
+            print(' ')
     return sweep_results
 
 
